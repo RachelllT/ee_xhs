@@ -1,568 +1,259 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>转行路上的 5 个真实误区</title>
-  <style>
-    :root {
-      --bg: #f5f5f7;
-      --surface: #fbfbfd;
-      --text: #1d1d1f;
-      --muted: #86868b;
-      --line: rgba(29, 29, 31, 0.12);
-      --accent: #0b1f33;
-      --danger: #6e2727;
-      --success: #173b2f;
-      --max: 920px;
-      --earth: #CDA18B;
-      --paper: #DDD3C9;
-      --mist: #C0BEC3;
-      --sage: #AFC2BD;
-      --ink-blue: #1F3D4B;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "PingFang SC",
-        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      letter-spacing: 0;
-      line-height: 1.78;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    .page {
-      min-height: 100vh;
-      overflow: hidden;
-    }
-
-    .hero {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 112px 28px 88px;
-    }
-
-    .eyebrow {
-      margin: 0 0 24px;
-      color: var(--muted);
-      font-size: 15px;
-      font-weight: 500;
-      line-height: 1.45;
-    }
-
-    h1 {
-      max-width: 820px;
-      margin: 0;
-      color: var(--text);
-      font-size: clamp(42px, 8vw, 84px);
-      font-weight: 700;
-      line-height: 1.04;
-    }
-
-    .lead {
-      max-width: 760px;
-      margin: 36px 0 0;
-      color: #424245;
-      font-size: clamp(19px, 2.35vw, 28px);
-      font-weight: 300;
-      line-height: 1.65;
-    }
-
-    .intro {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 28px 84px;
-    }
-
-    .intro-line {
-      max-width: 720px;
-      margin: 0;
-      color: var(--muted);
-      font-size: 18px;
-      font-weight: 300;
-    }
-
-    .article {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 28px 112px;
-    }
-
-    .mistake {
-      padding: 76px 0 82px;
-      border-top: 1px solid var(--line);
-    }
-
-    .mistake:first-child {
-      border-top-color: rgba(29, 29, 31, 0.18);
-    }
-
-    .mistake-card {
-      margin: 0 0 20px;
-      padding: 52px 52px 54px;
-      border: 1px solid color-mix(in srgb, var(--ink-blue) 18%, transparent);
-      border-radius: 12px;
-      background:
-        radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--ink-blue) 8%, transparent) 1px, transparent 0) 0 0 / 18px 18px,
-        linear-gradient(135deg, color-mix(in srgb, var(--paper) 90%, transparent), rgba(251, 251, 253, 0.92) 54%, color-mix(in srgb, var(--sage) 30%, transparent));
-      box-shadow: 0 28px 70px color-mix(in srgb, var(--ink-blue) 8%, transparent);
-    }
-
-    .mistake-card h2 {
-      max-width: 740px;
-      color: #171a22;
-      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", serif;
-      font-size: clamp(42px, 6.5vw, 74px);
-      font-weight: 800;
-      line-height: 1.08;
-    }
-
-    .card-meta {
-      margin: 0 0 24px;
-      color: var(--ink-blue);
-      font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 0;
-      text-transform: uppercase;
-    }
-
-    .card-meta span {
-      color: var(--earth);
-    }
-
-    .card-kicker {
-      max-width: 720px;
-      margin: 28px 0 0;
-      color: #394449;
-      font-size: 21px;
-      font-weight: 400;
-      line-height: 1.68;
-    }
-
-    .card-kicker strong {
-      color: var(--ink-blue);
-      font-weight: 700;
-    }
-
-    .card-chips {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 36px;
-    }
-
-    .card-chip {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 42px;
-      border: 1px solid color-mix(in srgb, var(--ink-blue) 20%, transparent);
-      border-radius: 999px;
-      color: var(--ink-blue);
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    .card-chip:nth-child(1) {
-      background: color-mix(in srgb, var(--earth) 18%, transparent);
-    }
-
-    .card-chip:nth-child(2) {
-      background: color-mix(in srgb, var(--paper) 56%, transparent);
-    }
-
-    .card-chip:nth-child(3) {
-      background: color-mix(in srgb, var(--mist) 35%, transparent);
-    }
-
-    .card-chip:nth-child(4) {
-      background: color-mix(in srgb, var(--sage) 45%, transparent);
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 34px;
-      overflow: hidden;
-      border: 0;
-      border-radius: 0;
-      background: transparent;
-    }
-
-    .card-panel {
-      position: relative;
-      min-height: 206px;
-      padding: 30px 26px 28px;
-      border: 1px solid color-mix(in srgb, var(--ink-blue) 12%, transparent);
-      border-radius: 9px;
-      background: rgba(251, 251, 253, 0.58);
-    }
-
-    .card-panel:nth-child(1) {
-      background: color-mix(in srgb, var(--earth) 16%, transparent);
-    }
-
-    .card-panel:nth-child(2) {
-      background: color-mix(in srgb, var(--mist) 24%, transparent);
-    }
-
-    .card-panel:nth-child(3) {
-      border-color: color-mix(in srgb, var(--ink-blue) 34%, transparent);
-      background: color-mix(in srgb, var(--sage) 34%, transparent);
-      box-shadow: 10px 12px 0 color-mix(in srgb, var(--ink-blue) 8%, transparent);
-    }
-
-    .card-panel::after {
-      position: absolute;
-      top: 26px;
-      right: 24px;
-      color: color-mix(in srgb, var(--ink-blue) 32%, transparent);
-      font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .card-panel:nth-child(1)::after {
-      content: "01";
-    }
-
-    .card-panel:nth-child(2)::after {
-      content: "02";
-    }
-
-    .card-panel:nth-child(3)::after {
-      content: "03";
-    }
-
-    .panel-title {
-      display: block;
-      max-width: 170px;
-      margin-bottom: 44px;
-      color: #171a22;
-      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", serif;
-      font-size: 27px;
-      font-weight: 800;
-      line-height: 1.18;
-    }
-
-    .card-panel p {
-      margin: 0;
-      color: #4b4f53;
-      font-size: 15px;
-      font-weight: 300;
-      line-height: 1.72;
-    }
-
-    .card-takeaway {
-      margin-top: 40px;
-      padding: 30px 32px 32px;
-      border: 1px solid color-mix(in srgb, var(--ink-blue) 16%, transparent);
-      border-radius: 9px;
-      background: color-mix(in srgb, var(--ink-blue) 92%, transparent);
-    }
-
-    .takeaway-label {
-      display: block;
-      margin-bottom: 14px;
-      color: var(--paper);
-      font-size: 15px;
-      font-weight: 700;
-    }
-
-    .card-takeaway p {
-      margin-top: 0;
-      color: rgba(255, 255, 255, 0.88);
-      font-size: 18px;
-    }
-
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin: 0 0 20px;
-      color: var(--danger);
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 1.2;
-    }
-
-    .section-label::before {
-      content: "";
-      width: 24px;
-      height: 1px;
-      background: currentColor;
-      opacity: 0.45;
-    }
-
-    h2 {
-      max-width: 790px;
-      margin: 0;
-      color: var(--text);
-      font-size: clamp(28px, 4.2vw, 48px);
-      font-weight: 700;
-      line-height: 1.16;
-    }
-
-    p {
-      max-width: 760px;
-      margin: 26px 0 0;
-      color: #343437;
-      font-size: 18px;
-      font-weight: 300;
-    }
-
-    .advice {
-      max-width: 760px;
-      margin-top: 38px;
-      padding-top: 28px;
-      border-top: 1px solid rgba(29, 29, 31, 0.1);
-    }
-
-    .advice-title {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--success);
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 0;
-    }
-
-    .advice p {
-      margin-top: 0;
-      color: #252527;
-    }
-
-    .closing {
-      background: var(--surface);
-      border-top: 1px solid var(--line);
-    }
-
-    .closing-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 86px 28px 96px;
-    }
-
-    .closing p {
-      max-width: 780px;
-      margin-top: 0;
-      color: #2b2b2d;
-      font-size: clamp(22px, 3vw, 34px);
-      font-weight: 600;
-      line-height: 1.42;
-    }
-
-    .closing .note {
-      margin-top: 30px;
-      color: var(--muted);
-      font-size: 18px;
-      font-weight: 300;
-      line-height: 1.7;
-    }
-
-    .cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      margin-top: 42px;
-      padding: 11px 22px;
-      border: 1px solid var(--accent);
-      border-radius: 6px;
-      background: var(--accent);
-      color: #fff;
-      font-size: 15px;
-      font-weight: 500;
-      line-height: 1.2;
-      text-decoration: none;
-    }
-
-    @media (max-width: 720px) {
-      .hero {
-        padding: 78px 22px 64px;
-      }
-
-      .intro {
-        padding: 0 22px 58px;
-      }
-
-      .article {
-        padding: 0 22px 78px;
-      }
-
-      .mistake {
-        padding: 56px 0 62px;
-      }
-
-      .mistake-card {
-        padding: 34px 24px 36px;
-        border-radius: 10px;
-      }
-
-      .card-kicker {
-        font-size: 17px;
-      }
-
-      .card-chips {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-      }
-
-      .card-chip {
-        min-height: 38px;
-        font-size: 14px;
-      }
-
-      .card-grid {
-        grid-template-columns: 1fr;
-        margin-top: 30px;
-        gap: 14px;
-      }
-
-      .card-panel {
-        min-height: auto;
-        padding: 25px 22px 26px;
-      }
-
-      .panel-title {
-        max-width: 240px;
-        margin-bottom: 26px;
-        font-size: 24px;
-      }
-
-      .card-takeaway {
-        padding: 25px 22px 27px;
-      }
-
-      p {
-        font-size: 16px;
-        line-height: 1.82;
-      }
-
-      .lead {
-        margin-top: 28px;
-      }
-
-      .closing-inner {
-        padding: 68px 22px 76px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EE · 小红书图文合集</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --c1: #CDA18B;
+  --c2: #DDD3C9;
+  --c3: #C0BEC3;
+  --c4: #AFC2BD;
+  --c5: #1F3D4B;
+  --base: #F5F5F7;
+  --text-primary: #1d1d1f;
+  --text-secondary: #4a4a4a;
+  --text-muted: #8a8a8a;
+  --card-white: rgba(255,255,255,0.82);
+  --border: rgba(0,0,0,0.08);
+}
+
+html, body {
+  min-height: 100vh;
+  background-color: #F5F5F7;
+  background-image:
+    radial-gradient(rgba(31,61,75,0.025) 1px, transparent 1px),
+    linear-gradient(135deg, rgba(205,161,139,0.18) 0%, rgba(221,211,201,0.18) 35%, rgba(192,190,195,0.18) 68%, rgba(175,194,189,0.18) 100%);
+  background-size: 6px 6px, 100% 100%;
+  background-attachment: fixed;
+  font-family: 'Noto Sans SC', -apple-system, 'PingFang SC', sans-serif;
+  color: var(--text-primary);
+}
+
+/* ─── 顶部标题区 ─── */
+.hero {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 60px 24px 32px;
+  text-align: center;
+}
+
+.hero-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.hero-logo-mark {
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  background: var(--c5);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 18px; font-weight: 900;
+  color: #fff;
+}
+
+.hero-logo-text {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 900;
+  color: var(--text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: clamp(13px, 2vw, 15px);
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ─── 卡片网格 ─── */
+.card-grid {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--card-white);
+  border-radius: 16px;
+  border: 0.5px solid var(--border);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), box-shadow 0.25s ease;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* 卡片渐变顶条 */
+.card-banner {
+  height: 6px;
+  flex-shrink: 0;
+}
+.card:nth-child(4n+1) .card-banner { background: linear-gradient(90deg, var(--c1), rgba(205,161,139,0.4)); }
+.card:nth-child(4n+2) .card-banner { background: linear-gradient(90deg, var(--c2), rgba(221,211,201,0.4)); }
+.card:nth-child(4n+3) .card-banner { background: linear-gradient(90deg, var(--c3), rgba(192,190,195,0.4)); }
+.card:nth-child(4n+4) .card-banner { background: linear-gradient(90deg, var(--c4), rgba(175,194,189,0.4)); }
+
+.card-body {
+  padding: 18px 20px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-date {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.card-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.card-desc {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 14px;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.card-tag {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--c5);
+  background: rgba(31,61,75,0.08);
+  padding: 3px 9px;
+  border-radius: 4px;
+}
+
+/* ─── 加载/错误状态 ─── */
+.status-msg {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.status-msg.error {
+  color: #c0392b;
+}
+
+/* ─── 页脚 ─── */
+.footer {
+  text-align: center;
+  padding: 24px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ─── 响应式 ─── */
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 0 16px 60px;
+  }
+  .hero { padding: 40px 16px 24px; }
+}
+</style>
 </head>
 <body>
-  <main class="page">
-    <header class="hero">
-      <p class="eyebrow">从建筑跨行到互联网，拿到多个大厂实习 offer，即将入职 AI 公司</p>
-      <h1>转行路上的 5 个真实误区</h1>
-      <p class="lead">回头来看，这条路走得并不顺。以下每一个弯路，都曾亲身经历。整理出来，希望对同样在转行路上的你有所参考。</p>
-    </header>
 
-    <section class="intro" aria-label="开篇">
-      <p class="intro-line">转行过程中，最难的往往不是多学一门技能，而是在持续碰壁时，仍然能判断什么值得坚持，什么只是焦虑驱动下的绕路。</p>
-    </section>
+<!-- 顶部标题区 -->
+<header class="hero">
+  <div class="hero-logo">
+    <div class="hero-logo-mark">EE</div>
+    <span class="hero-logo-text">小红书图文合集</span>
+  </div>
+  <h1>每一篇都值得被看见</h1>
+  <p>这里收录我的小红书图文作品，点击卡片即可阅读全文。</p>
+</header>
 
-    <article class="article">
-      <section class="mistake">
-        <div class="mistake-card">
-          <p class="card-meta">CAREER SWITCH NOTES <span>拆解系列 (1)</span></p>
-          <h2>定向大厂，忽视了自身缺乏入场资质</h2>
-          <p class="card-kicker">转行初期最容易产生一种错觉：<strong>目标越高，机会越好。</strong>于是把大部分精力集中在 BAT、字节、腾讯等头部平台，反复修改简历、批量投递，期待一次“被看见”的机会。</p>
+<!-- 卡片网格 -->
+<main class="card-grid" id="cardGrid">
+  <div class="status-msg">加载中…</div>
+</main>
 
-          <div class="card-chips" aria-label="弯路 1 关键词">
-            <span class="card-chip">目标误判</span>
-            <span class="card-chip">简历筛选</span>
-            <span class="card-chip">入场资质</span>
-            <span class="card-chip">履历先行</span>
-          </div>
+<!-- 页脚 -->
+<footer class="footer">© 2026 EE · 持续更新中</footer>
 
-          <div class="card-grid" aria-label="弯路 1 拆解">
-            <div class="card-panel">
-              <span class="panel-title">当时的判断</span>
-              <p>既然决定离开建筑行业，就应该一步到位进入最好的平台。只要履历里有名校项目、设计能力和跨学科经历，大厂应该能看到潜力。</p>
-            </div>
-            <div class="card-panel">
-              <span class="panel-title">真实的反馈</span>
-              <p>简历大量石沉大海，偶尔收到回复，也多是模板化的“感谢投递”。问题并不是不够努力，而是还没有被系统识别为合适候选人。</p>
-            </div>
-            <div class="card-panel">
-              <span class="panel-title">底层原因</span>
-              <p>大厂筛选高度标准化：专业背景、相关实习、目标院校、岗位关键词，任何一项不匹配，都可能在简历阶段被过滤。</p>
-            </div>
-          </div>
+<script>
+const grid = document.getElementById('cardGrid');
 
-          <div class="card-takeaway">
-            <span class="takeaway-label">建议</span>
-            <p>转行的第一步，不一定是冲击头部平台，而是先补齐“入场资质”。可以优先选择中小规模公司、新兴赛道，或 AI、出海等更愿意接纳复合背景的方向，拿到第一段相关经历。等简历里出现了目标岗位能理解的项目、指标和业务语言，再去叩击大厂的门，转化率会有本质差异。履历先行，目标随后。</p>
+fetch('pages.json')
+  .then(res => {
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    return res.json();
+  })
+  .then(pages => {
+    if (!pages || pages.length === 0) {
+      grid.innerHTML = '<div class="status-msg">还没有内容，敬请期待。</div>';
+      return;
+    }
+    grid.innerHTML = pages.map(p => `
+      <a class="card" href="${p.file}">
+        <div class="card-banner"></div>
+        <div class="card-body">
+          <div class="card-date">${p.date || ''}</div>
+          <h2 class="card-title">${p.title || '无标题'}</h2>
+          <p class="card-desc">${p.description || ''}</p>
+          <div class="card-tags">
+            ${(p.tags || []).map(t => `<span class="card-tag">${t}</span>`).join('')}
           </div>
         </div>
-      </section>
-
-      <section class="mistake">
-        <p class="section-label">弯路 2</p>
-        <h2>大厂受阻，退而求其次转投设计相关岗位</h2>
-        <p>大厂投递没有结果，开始动摇，心想是否应该回归专业优势，于是转而投递空间设计、展陈策划等方向，以“先落地再说”作为说服自己的理由。</p>
-        <p>实际投递之后发现，此类岗位本身体量有限，应聘者多为设计科班出身，薪资结构也没有竞争优势。更根本的问题在于，这条赛道的上升空间相当有限。绕了一圈，不过是回到了原点。</p>
-        <div class="advice">
-          <span class="advice-title">建议</span>
-          <p>对于建筑背景的转行者而言，转行的本质是赛道升级，而非专业延伸。遭遇挫折时，退回舒适区是最自然的反应，但不妨先问自己一个问题：五年后，仍然愿意在这个方向上继续吗？方向的正确性优先于推进的速度，走慢一些，也不要走回头路。</p>
-        </div>
-      </section>
-
-      <section class="mistake">
-        <p class="section-label">弯路 3</p>
-        <h2>投入数月学习 SQL 与 Python，进入实习后几乎用不上</h2>
-        <p>市面上大量转行经验帖几乎形成了同一套话语体系：“不懂数据寸步难行”“技术能力是核心竞争力”。受此影响，系统学习了 SQL 与 Python 基础，自以为准备充分，可以正式入场。</p>
-        <p>然而在运营与解决方案方向的实习中，日常工作几乎不涉及代码层面的操作，现有的数据看板工具已经足以满足需求。那几个月的时间，若用于深入研究目标行业或系统打磨项目经历，对简历的实际价值要高得多。</p>
-        <div class="advice">
-          <span class="advice-title">建议</span>
-          <p>学习技术之前，应当先明确目标岗位的实际需求。建议在招聘平台抽取至少 20 条目标岗位的 JD，梳理高频要求，再据此决定学什么、学到什么程度。技术能力是竞争加分项，而非转行的前置门槛。避免让焦虑驱动学习决策，按需投入才是有效路径。</p>
-        </div>
-      </section>
-
-      <section class="mistake">
-        <p class="section-label">弯路 4</p>
-        <h2>简历以设计项目为主体，尝试向产品运营方向靠拢，却始终没有回音</h2>
-        <p>彼时认为自己已经在做主动转化：在建筑设计项目中补充了用户分析模块、加入了商务汇报相关内容，以为这样的呈现足以让招聘方看到跨行的潜力。</p>
-        <p>结果投递出去，要么石沉大海，要么被直接标注为“不符合要求”。后来请有经验的人帮忙审阅简历，才找到问题所在：整份简历的叙事逻辑停留在“我做了什么”，而非“我解决了什么问题、产生了什么价值”。建筑语境与互联网语境是两套截然不同的表达体系，在原有框架上修补，远不如从结构上重新梳理。</p>
-        <div class="advice">
-          <span class="advice-title">建议</span>
-          <p>转行简历的核心逻辑，不是罗列经历，而是建立经历与目标岗位之间的价值关联。每一条内容都需要回答：这件事体现了什么能力，产生了什么可量化的结果？即便项目未能完整落地，只要参与深度足够、能够清晰阐述其中的思考与判断，同样具备说服力。</p>
-        </div>
-      </section>
-
-      <section class="mistake">
-        <p class="section-label">弯路 5</p>
-        <h2>方向尚未明确，广泛投递，包括销售岗位</h2>
-        <p>迷茫阶段曾采取过一种策略：凡是不限专业的岗位一律投递，以覆盖面换取机会。其中包括销售岗位。为了一场面试，硬着头皮研究产品逻辑、准备销售话术，坐在面试现场时，脑子里浮现的问题只有一个：我为什么在这里？</p>
-        <p>最终没有收到 offer，但更大的代价是时间与精力的消耗。为一个本就不感兴趣的方向做了大量无效准备，结束之后什么也没有沉淀下来。</p>
-        <div class="advice">
-          <span class="advice-title">建议</span>
-          <p>广泛投递不等于无效投递，但前提是方向要先想清楚。建议在正式开始投递之前，先梳理一件事：自己在做什么类型的工作时，会自然进入专注状态？以此为基础，再与岗位需求进行比对，找到真正的交集。对不感兴趣的方向，即便拿到 offer，后续的发展空间也十分有限。宁可投递数量少一些，但每一次都要指向真正想去的方向。</p>
-        </div>
-      </section>
-    </article>
-
-    <footer class="closing">
-      <div class="closing-inner">
-        <p>这 5 个弯路都曾亲历，也正是走过这些，才逐渐找到了真正适合自己的方向。</p>
-        <p class="note">你目前处于转行的哪个阶段？欢迎和鹅鹅交流交流。</p>
-        <a class="cta" href="javascript:void(0)" aria-label="开始交流">开始交流</a>
-      </div>
-    </footer>
-  </main>
+      </a>
+    `).join('');
+  })
+  .catch(err => {
+    grid.innerHTML = `<div class="status-msg error">加载失败：${err.message}<br>请确保通过 HTTP 服务访问（如 GitHub Pages 或本地 python -m http.server）。</div>`;
+  });
+</script>
 </body>
 </html>
